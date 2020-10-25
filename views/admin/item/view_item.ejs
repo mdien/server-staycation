@@ -16,12 +16,60 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <!-- 404 Error Text -->
-          <div class="text-center">
-            <p>Item</p>
-            <%- include('table_item.ejs') -%>
+          <%- include('../../partials/message.ejs') -%>
+          <!-- Heading Text -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <% if(action == 'view') { %>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="show-tab"
+                data-toggle="tab"
+                href="#show-item"
+                role="tab"
+                aria-controls="show"
+                aria-selected="true"
+                >Show Item</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="add-tab"
+                data-toggle="tab"
+                href="#add-item"
+                role="tab"
+                aria-controls="add"
+                aria-selected="false"
+                >Add Item</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <%- include('show_table_item.ejs') -%> <%- include('add_item.ejs')
+            -%>
           </div>
+          <% } else if(action == 'show image') { %>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="show-image-item"
+                data-toggle="tab"
+                href="#show-image"
+                role="tab"
+                aria-controls="add"
+                aria-selected="false"
+                >Show Image Item</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <%- include('show_image_item.ejs') -%>
+          </div>
+          <% } %>
         </div>
+
         <!-- /.container-fluid -->
       </div>
       <!-- End of Main Content -->
@@ -76,3 +124,6 @@
 </body>
 
 <%- include('../../partials/js.ejs') -%>
+<script>
+  CKEDITOR.replace("about");
+</script>

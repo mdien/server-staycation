@@ -15,13 +15,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <!-- 404 Error Text -->
-          <div class="text-center">
-            <p>Bank</p>
-            <%- include('table_bank.ejs') -%>
-          </div>
-        </div>
+        <div class="container-fluid"><%- include('table_bank.ejs') -%></div>
         <!-- /.container-fluid -->
       </div>
       <!-- End of Main Content -->
@@ -75,4 +69,19 @@
   </div>
 </body>
 
-<%- include('../../partials/js.ejs') -%>
+<%- include('add_modal.ejs') -%> <%- include('edit_modal.ejs') -%> <%-
+include('../../partials/js.ejs') -%>
+<script>
+  $("#dataTable").on("click", ".button-update", function () {
+    let id = $(this).data("id");
+    let name = $(this).data("name");
+    let nameBank = $(this).data("name-bank");
+    let nomorRekening = $(this).data("nomor-rekening");
+    console.log(nomorRekening);
+    $("#edit-modal").modal("show");
+    $(".id").val(id);
+    $(".bank-name").val(nameBank);
+    $(".nomor-rekening").val(nomorRekening);
+    $(".name").val(name);
+  });
+</script>
