@@ -8,7 +8,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 // import mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_bwamern", {
+mongoose.connect("mongodb://localhost:27017/db_staycation", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -31,7 +31,7 @@ app.use(
     secret: "keyboard car",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 6000000 },
   })
 );
 app.use(flash());

@@ -1,12 +1,5 @@
 <div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#add-modal"
-    >
-  </div>
+  <div class="card-header py-3">Datatables</div>
   <div class="card-body">
     <div class="table-responsive">
       <table
@@ -26,6 +19,33 @@
             <th>Action</th>
           </tr>
         </thead>
+        <tbody>
+          <% for (let i = 0; i < booking.length; i++) { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td>
+              <%= booking[i].bookingStartDate.toLocaleString().split(',')[0] %>
+              s/d <%= booking[i].bookingEndDate.toLocaleString().split(',')[0]
+              %>
+            </td>
+            <td><%= booking[i].itemId.title %></td>
+            <td>
+              <%= booking[i].memberId.firstName %> <%=
+              booking[i].memberId.lastName %>
+            </td>
+            <td><%= booking[i].bankId.nameBank %></td>
+            <td><%= booking[i].payments.status %></td>
+            <td>
+              <a
+                href="/admin/booking/<%= booking[i]._id %>"
+                class="btn btn-success btn-circle btn-sm"
+              >
+                <i class="fas fa-eye"></i>
+              </a>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
       </table>
     </div>
   </div>
