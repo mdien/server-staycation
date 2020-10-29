@@ -6,6 +6,7 @@ const Bank = require("../models/Bank");
 const Booking = require("../models/Booking");
 const Member = require("../models/Member");
 
+//yes
 module.exports = {
   landingPage: async (req, res) => {
     try {
