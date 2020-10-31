@@ -16,7 +16,7 @@ pw: rahasia
 
 ### Installation
 
-Server-Staycation membutuhkan [composer](https://nodejs.org/) v8+ to run.
+Server-Staycation membutuhkan [Node.Js](https://nodejs.org/) v8+ to run.
 
 Diharapkan untuk menginstall Server MongoDB sebelum menggunakan aplikasi ini
 
